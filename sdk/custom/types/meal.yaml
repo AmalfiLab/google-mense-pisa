@@ -1,0 +1,13 @@
+synonym:
+  entities:
+    dinner:
+      synonyms:
+      - cena
+      - stasera
+      - sera
+    launch:
+      synonyms:
+      - pranzo
+      - mattina
+      - mezzogiorno
+  matchType: EXACT_MATCH

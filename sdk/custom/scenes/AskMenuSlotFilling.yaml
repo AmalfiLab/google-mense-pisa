@@ -1,0 +1,55 @@
+conditionalEvents:
+- condition: scene.slots.status == 'FINAL'
+  handler:
+    webhookHandler: get_menu
+slots:
+- commitBehavior:
+    writeSessionParam: canteen
+  name: canteen
+  promptSettings:
+    initialPrompt:
+      staticPrompt:
+        candidates:
+        - promptResponse:
+            firstSimple:
+              variants:
+              - speech: Quale mensa?
+            suggestions:
+            - title: Martiri
+            - title: Betti
+            - title: Rosellini
+    noInputPrompt1:
+      staticPrompt:
+        candidates:
+        - promptResponse:
+            firstSimple:
+              variants:
+              - speech: Quale mensa?
+            suggestions:
+            - title: Martiti
+            - title: Betti
+            - title: Rosellini
+    noMatchPrompt1:
+      staticPrompt:
+        candidates:
+        - promptResponse:
+            firstSimple:
+              variants:
+              - speech: Scusami non conosco questa mensa. Quale mensa vuoi scegliere?
+            suggestions:
+            - title: Martiti
+            - title: Betti
+            - title: Rosellini
+  required: true
+  type:
+    name: canteen
+- commitBehavior:
+    writeSessionParam: meal
+  name: meal
+  type:
+    name: meal
+- commitBehavior:
+    writeSessionParam: when
+  name: when
+  type:
+    name: actions.type.DateTime

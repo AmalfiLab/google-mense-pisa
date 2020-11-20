@@ -1,0 +1,12 @@
+intentEvents:
+- intent: AskMenu
+  transitionToScene: AskMenuSlotFilling
+onEnter:
+  staticPrompt:
+    candidates:
+    - promptResponse:
+        firstSimple:
+          variants:
+          - speech: Come posso esserti utile?
+        suggestions:
+        - title: Cosa c'è per pranzo?

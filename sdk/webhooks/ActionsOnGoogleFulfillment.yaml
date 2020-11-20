@@ -1,0 +1,4 @@
+handlers:
+- name: get_menu
+inlineCloudFunction:
+  executeFunction: ActionsOnGoogleFulfillment

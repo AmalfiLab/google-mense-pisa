@@ -1,0 +1,27 @@
+parameters:
+- name: canteen
+  type:
+    name: canteen
+- name: meal
+  type:
+    name: meal
+- name: when
+  type:
+    name: actions.type.DateTime
+trainingPhrases:
+- Cosa c'è per ($meal 'pranzo' auto=false)?
+- Dimmi il menù di ($when 'domani' auto=false) a ($meal 'pranzo' auto=false)
+- Cosa c'è ($when 'domani' auto=false) a ($meal 'pranzo' auto=false)?
+- Cosa si mangia ($when 'domani' auto=true)?
+- Cosa si mangia a ($meal 'cena' auto=false)?
+- Cosa offre il menu della ($canteen 'Betti' auto=false)?
+- Cosa offre la ($canteen 'Martiri' auto=false)?
+- Cosa offre il menù a ($meal 'cena' auto=false) della ($canteen 'Centrale' auto=false)?
+- Cosa c'è da mangiare ($when 'domani' auto=false)?
+- Cosa si mangia ($when 'oggi' auto=true)?
+- Cosa si mangia alla ($canteen 'Martiri' auto=false)?
+- Cosa c'è alla ($canteen 'Martiri' auto=false)?
+- Dimmi il menù di ($when 'oggi' auto=false) a ($meal 'pranzo' auto=false) alla ($canteen
+  'Rosellini' auto=false)
+- Cosa c'è ($when 'oggi' auto=false) alla ($canteen 'Betti' auto=false)?
+- 'Cosa si mangia alla ($canteen ''Martiri'' auto=false)? '

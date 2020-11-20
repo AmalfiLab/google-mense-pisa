@@ -1,0 +1,13 @@
+synonym:
+  entities:
+    betti:
+      synonyms:
+      - Betti
+    martiri:
+      synonyms:
+      - Martiri
+      - Centrale
+    rosellini:
+      synonyms:
+      - Rosellini
+  matchType: EXACT_MATCH

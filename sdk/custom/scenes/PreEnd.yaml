@@ -1,0 +1,24 @@
+intentEvents:
+- handler:
+    staticPrompt:
+      candidates:
+      - promptResponse:
+          firstSimple:
+            variants:
+            - speech: Ok!
+  intent: "Yes"
+  transitionToScene: AskMenuSlotFilling
+- intent: "No"
+  transitionToScene: actions.scene.END_CONVERSATION
+- intent: AskMenu
+  transitionToScene: AskMenuSlotFilling
+onEnter:
+  staticPrompt:
+    candidates:
+    - promptResponse:
+        firstSimple:
+          variants:
+          - speech: Hai bisogno di altro?
+        suggestions:
+        - title: Sì
+        - title: "No"

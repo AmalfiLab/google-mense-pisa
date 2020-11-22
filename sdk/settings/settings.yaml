@@ -1,6 +1,21 @@
+category: FOOD_AND_DRINK
 defaultLocale: it
+enabledRegions:
+- Italy
 localizedSettings:
+  developerEmail: amalfilab@protonmail.com
+  developerName: AmalfiLab
   displayName: Mense Pisa
+  fullDescription: |-
+    Siete affamati e non vedete l'ora di sapere quando ci saranno i rigatoni dorati a mensa?
+    Con questa Action potrete chiedere sapere il menù delle mense universitarie di Pisa, a pranzo o a cena, di un giorno a vostra scelta!
+  privacyPolicyUrl: https://docs.google.com/document/d/14S3L9uygYLqdHxAtZb00kf5a3ibxG3cnTviCMxY2rWY/edit?usp=sharing
   pronunciation: Mense Pisa
+  sampleInvocations:
+  - Parla con Mense Pisa
+  - Apri Mense Pisa
+  - Chiedi a Mense Pisa cosa c'è a pranzo
+  shortDescription: Vuoi sapere il menù delle mense di Pisa?
+  smallLogoImage: https://lh3.googleusercontent.com/aytQFXRykulD7rGq1Wr-AmcpAkJO9E5iLsXKI-a0KgO_D4WM8n8ASFDYjyD_E-Ha9HVNgZPEz6Qf
   voice: female_1
 projectId: mensepisa

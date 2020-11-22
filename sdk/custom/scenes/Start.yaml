@@ -10,3 +10,5 @@ onEnter:
           - speech: Come posso esserti utile?
         suggestions:
         - title: Cosa c'è per pranzo?
+        - title: Cosa c'è domani?
+        - title: Cosa c'è alla Martiri?

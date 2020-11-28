@@ -1,5 +1,6 @@
 const { conversation, Card } = require('@assistant/conversation');
 const functions = require('firebase-functions');
+const { warn, info } = require('firebase-functions/lib/logger');
 const admin = require('firebase-admin');
 
 admin.initializeApp();
@@ -33,8 +34,10 @@ function getMealOrDefault(meal, queryDate) {
   const isTodayQuery = now.getFullYear() == queryDate.getFullYear() &&
                        now.getMonth() == queryDate.getMonth() &&
                        now.getDate() == queryDate.getDate();
-  console.log("meal debug", JSON.stringify({isTodayQuery, nowHours: now.getUTCHours()}));
-  return (isTodayQuery && now.getUTCHours() > 14) ? 'dinner' : 'launch';
+  const out = (isTodayQuery && now.getUTCHours() > 14) ? 'dinner' : 'launch';
+  
+  info("meal: " + out, { isTodayQuery, nowHours: now.getUTCHours() });
+  return out;
 }
 
 function getSpeakOutResponse(menu, canteen, meal, queryDate) {
@@ -65,8 +68,8 @@ app.handle('get_menu', async conv => {
   if (!menu) {
     conv.add(`Il menu della ${canteen} non è disponibile.`);
   } else {
-    conv.add(getSpeakOutResponse(menu, canteen, meal, queryDate));
-    conv.add(getCardResponse(menu, canteen, meal, queryDate));
+    conv.add(getSpeakOutResponse(menu, canteen, queryMeal, queryDate));
+    conv.add(getCardResponse(menu, canteen, queryMeal, queryDate));
   }
   conv.scene.next.name = 'PreEnd';
 });

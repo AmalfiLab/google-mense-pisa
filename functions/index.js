@@ -8,7 +8,7 @@ exports.fetchAndUpdateNextWeekMenu = functions.pubsub.schedule('0 9 * * 6')
   .onRun(context => {
     for (const canteen of canteens) {
       try {
-        fetchAndUpdateMenu({ canteen: 'martiri', deltaWeek: 1 });
+        fetchAndUpdateMenu({ canteen, deltaWeek: 1 });
       } catch (error) {
         console.error(`error with updating ${canteen}`, error);
       }

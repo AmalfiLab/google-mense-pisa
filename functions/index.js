@@ -5,7 +5,7 @@ const canteens = ['martiri', 'betti', 'rosellini'];
 
 exports.fetchAndUpdateNextWeekMenu = functions.pubsub.schedule('0 9 * * 6')
   .timeZone('Europe/Rome')
-  .onRun(context => {
+  .onRun(async context => {
     for (const canteen of canteens) {
       try {
         await fetchAndUpdateMenu({ canteen, deltaWeek: 1 });

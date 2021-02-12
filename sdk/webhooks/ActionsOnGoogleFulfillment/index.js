@@ -24,6 +24,7 @@ function getWhenOrDefault(when) {
     queryDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   }
   queryDate.setMinutes(queryDate.getMinutes() - queryDate.getTimezoneOffset());
+  console.log("Timezone offset: ", queryDate.getTimezoneOffset());
   return queryDate;
 }
 
@@ -59,8 +60,11 @@ function getCardResponse(menu, canteen, meal, queryDate) {
 
 app.handle('get_menu', async conv => {
   const { canteen, when, meal } = conv.session.params;
+  console.log("request:", {canteen, when, meal});
+
   const queryDate = getWhenOrDefault(when);
   const queryMeal = getMealOrDefault(meal, queryDate);
+  console.log("query:", {queryDate, queryMeal});
   
   const menuDoc = await db.collection('menu').doc(canteen).get();
   const menu = getMenu(menuDoc, queryDate.toISOString(), queryMeal);
